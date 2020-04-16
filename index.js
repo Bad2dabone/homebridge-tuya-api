@@ -64,10 +64,7 @@ class TuyaWebPlatform {
           this.tuyaWebApi.discoverDevices().then((devices) => {
             // Add devices to Homebridge
             for (const device of devices) {
-              if (device.dev_type !== 'scene') {
-                this.log(`Found: ${ device.dev_type }`)
-                this.addAccessory(device);
-              }
+              this.addAccessory(device)
             }
             // Get device strate of all devices - once
             this.refreshDeviceStates();
@@ -98,7 +95,9 @@ class TuyaWebPlatform {
           homebridgeAccessory.controller.updateAccessory(device);
         }
         else {
-          this.log.error('Could not find accessory in dictionary');
+          if (device.dev_type !== 'scene') {
+            this.log.error(`Could not find accessory (${ device.dev_type }) in dictionary`);
+	  }
         }
       }
     }).catch((error) => {
