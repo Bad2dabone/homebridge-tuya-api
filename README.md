@@ -1,4 +1,4 @@
-!! THIS REPOSITORY IS NOT ACTIVELY MAINTAINED ANYMORE, PLEASE FEEL FREE TO CREATE FORK !!
+!! THIS REPOSITORY IS A FORK OF [homebridge-tuya-web](https://github.com/basdelfos/homebridge-tuya-web) !!
 
 # homebridge-tuya-web
 
