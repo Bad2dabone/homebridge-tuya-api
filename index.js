@@ -64,7 +64,9 @@ class TuyaWebPlatform {
           this.tuyaWebApi.discoverDevices().then((devices) => {
             // Add devices to Homebridge
             for (const device of devices) {
-              this.addAccessory(device);
+              if (device.dev_type !== 'scene') {
+                this.addAccessory(device);
+              }
             }
             // Get device strate of all devices - once
             this.refreshDeviceStates();
