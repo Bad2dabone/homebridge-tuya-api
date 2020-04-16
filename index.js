@@ -65,6 +65,7 @@ class TuyaWebPlatform {
             // Add devices to Homebridge
             for (const device of devices) {
               if (device.dev_type !== 'scene') {
+                this.log(`Found: ${ device.dev_type }`)
                 this.addAccessory(device);
               }
             }
