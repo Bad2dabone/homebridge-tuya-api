@@ -19,7 +19,7 @@ This Homebridge Plugin implements the following features:
 ## Installation
 
 ```
-npm i homebridge-tuya-web -g
+npm install -g bad2dabone/homebridge-tuya-api
 ```
 
 ## Basic config.json
